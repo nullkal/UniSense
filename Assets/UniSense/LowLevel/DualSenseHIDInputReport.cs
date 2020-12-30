@@ -5,7 +5,7 @@ using UnityEngine.InputSystem.Utilities;
 
 namespace UniSense.LowLevel
 {
-    [StructLayout(LayoutKind.Explicit, Size = 32)]
+    [StructLayout(LayoutKind.Explicit, Size = 64)]
     internal struct DualSenseHIDInputReport : IInputStateTypeInfo
     {
         public FourCC format => new FourCC('H', 'I', 'D');
@@ -92,6 +92,30 @@ namespace UniSense.LowLevel
         [InputControl(name = "micMuteButton", layout = "Button", displayName = "Mic Mute", bit = 2)]
         [FieldOffset(10)]
         public byte buttons3;
+        
+        [InputControl(name = "gyroPitch", layout = "Axis", format = "SHRT")]
+        [FieldOffset(16)] 
+        public short gyroPitch;
+        
+        [InputControl(name = "gyroYaw", layout = "Axis", format = "SHRT")]
+        [FieldOffset(18)] 
+        public short gyroYaw;
+        
+        [InputControl(name = "gyroRoll", layout = "Axis", format = "SHRT")]
+        [FieldOffset(20)] 
+        public short gyroRoll;
+    
+        [InputControl(name = "accelX", layout = "Axis", format = "SHRT")]
+        [FieldOffset(22)] 
+        public short accelX;
+        
+        [InputControl(name = "accelY", layout = "Axis", format = "SHRT")]
+        [FieldOffset(24)] 
+        public short accelY;
+        
+        [InputControl(name = "accelZ", layout = "Axis", format = "SHRT")]
+        [FieldOffset(26)] 
+        public short accelZ;
 
         [InputControl(name = "batteryCharging", layout = "Button", displayName = "Battery is Charging", bit = 3)]
         [FieldOffset(54)]
