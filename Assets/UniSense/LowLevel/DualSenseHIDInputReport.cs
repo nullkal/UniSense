@@ -93,29 +93,21 @@ namespace UniSense.LowLevel
         [FieldOffset(10)]
         public byte buttons3;
         
-        [InputControl(name = "gyroPitch", layout = "Axis", format = "SHRT")]
-        [FieldOffset(16)] 
-        public short gyroPitch;
-        
-        [InputControl(name = "gyroYaw", layout = "Axis", format = "SHRT")]
-        [FieldOffset(18)] 
-        public short gyroYaw;
-        
-        [InputControl(name = "gyroRoll", layout = "Axis", format = "SHRT")]
-        [FieldOffset(20)] 
-        public short gyroRoll;
+        [InputControl(name = "gyro", format = "VC3S", layout = "Vector3")]
+        [InputControl(name = "gyro/x", layout = "Axis", format = "SHRT")]
+        [InputControl(name = "gyro/y", offset = 2, layout = "Axis", format = "SHRT")]
+        [InputControl(name = "gyro/z", offset = 4, layout = "Axis", format = "SHRT")]
+        [FieldOffset(16)] public short gyroPitch;
+        [FieldOffset(18)] public short gyroYaw;
+        [FieldOffset(20)] public short gyroRoll;
     
-        [InputControl(name = "accelX", layout = "Axis", format = "SHRT")]
-        [FieldOffset(22)] 
-        public short accelX;
-        
-        [InputControl(name = "accelY", layout = "Axis", format = "SHRT")]
-        [FieldOffset(24)] 
-        public short accelY;
-        
-        [InputControl(name = "accelZ", layout = "Axis", format = "SHRT")]
-        [FieldOffset(26)] 
-        public short accelZ;
+        [InputControl(name = "accel", format = "VC3S", layout = "Vector3")]
+        [InputControl(name = "accel/x", layout = "Axis", format = "SHRT")]
+        [InputControl(name = "accel/y", offset = 2, layout = "Axis", format = "SHRT")]
+        [InputControl(name = "accel/z", offset = 4, layout = "Axis", format = "SHRT")]
+        [FieldOffset(22)] public short accelX;
+        [FieldOffset(24)] public short accelY;
+        [FieldOffset(26)] public short accelZ;
 
         [InputControl(name = "batteryCharging", layout = "Button", displayName = "Battery is Charging", bit = 3)]
         [FieldOffset(54)]
