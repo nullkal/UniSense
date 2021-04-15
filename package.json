@@ -2,7 +2,7 @@
   "name": "com.nullkal.unisense",
   "displayName": "Input System-UniSense",
   "version": "0.1.0",
-  "unity": "2020.2",
+  "unity": "2019.1",
   "description": "This plugin enables Unity apps to use DualSense in Windows OS, the controller for PlayStation 5.",
   "keywords": [
     "Gamepad",

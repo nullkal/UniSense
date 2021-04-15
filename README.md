@@ -13,7 +13,7 @@ Any contribution is appreciated. Please do not hesitate to send PR if you have a
 
 ## Requirements
 
-- Unity 2020.2.0f1
+- Unity 2019.1 or above
 - Input System v1.0.1
 
 ## Installation
