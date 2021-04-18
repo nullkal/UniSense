@@ -13,20 +13,16 @@ Any contribution is appreciated. Please do not hesitate to send PR if you have a
 
 ## Requirements
 
-- Unity 2020.2.0f1
-- Input System v1.0.1
+- Unity 2019.1 or above
+- Input System [v1.0.1](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/changelog/CHANGELOG.html#101---2020-11-20) or above
 
 ## Installation
 
-Unitypackage is unavailable for now, so please install UniSense manually.
+You can install this package using Unity Package Manager (UPM).
 
-1. Clone this repository
-    ```sh
-    $ git clone https://github.com/nullkal/UniSense.git
-    ```
-2. Copy these files and directories into your Unity project's Assets directory:
-    - Assets/UniSense/
-    - Assets/UniSense.meta
+1. On Unity Editor, open UPM window by going to Window > Package Manager
+2. In this window top left corner, click on the **+** button and select **Add package from git URL...**
+3. Enter this url ```https://github.com/nullkal/UniSense.git```
 
 ## Special thanks
 
