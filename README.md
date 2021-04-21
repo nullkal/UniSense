@@ -24,6 +24,12 @@ You can install this package using Unity Package Manager (UPM).
 2. In this window top left corner, click on the **+** button and select **Add package from git URL...**
 3. Enter this url ```https://github.com/nullkal/UniSense.git```
 
+## Samples
+
+A main sample is available. There, you can see how to use the DualSense main features.
+
+On the UPM windows, select **Input System-UniSense** package, go to the Samples section and import the **DualSense Main Sample**.
+
 ## Special thanks
 
 - [Ohjurot/DualSense-Windows](https://github.com/Ohjurot/DualSense-Windows)
