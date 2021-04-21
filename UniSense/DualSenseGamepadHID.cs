@@ -108,6 +108,27 @@ namespace UniSense
             m_LowFrequencyMotorSpeed = null;
         }
 
+        public void ResetMotorSpeeds() => SetMotorSpeeds(0f, 0f);
+
+        public void ResetLightBarColor() => SetLightBarColor(Color.black);
+
+        public void ResetTriggersState()
+        {
+            var command = DualSenseHIDOutputReport.Create();
+            command.SetRightTriggerState(m_rightTriggerState.Value);
+            command.SetLeftTriggerState(m_leftTriggerState.Value);
+
+            ExecuteCommand(ref command);
+        }
+
+        public void Reset()
+        {
+            ResetHaptics();
+            ResetMotorSpeeds();
+            ResetLightBarColor();
+            ResetTriggersState();
+        }
+
         public override void ResumeHaptics()
         {
             if (!MotorHasValue && !LeftTriggerHasValue && !RightTriggerHasValue)
@@ -121,7 +142,6 @@ namespace UniSense
             ExecuteCommand(ref command);
         }
 
-        //não funfa
         public override void SetLightBarColor(Color color)
         {
             var command = DualSenseHIDOutputReport.Create();
