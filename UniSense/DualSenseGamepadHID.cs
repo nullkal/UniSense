@@ -21,7 +21,7 @@ namespace UniSense
         public ButtonControl leftTriggerButton { get; protected set; }
         public ButtonControl rightTriggerButton { get; protected set; }
         public ButtonControl playStationButton { get; protected set; }
-        
+
         public ButtonControl micMuteButton { get; protected set; }
 
 #if UNITY_EDITOR
@@ -30,6 +30,29 @@ namespace UniSense
             Initialize();
         }
 #endif
+
+        /// <summary>
+        /// Finds the first DualSense connected by the player or <c>null</c> if 
+        /// there is no one connected to the system.
+        /// </summary>
+        /// <returns>A DualSenseGamepadHID instance or <c>null</c>.</returns>
+        public static DualSenseGamepadHID FindFirst()
+        {
+            foreach (var gamepad in all)
+            {
+                var isDualSenseGamepad = gamepad is DualSenseGamepadHID;
+                if (isDualSenseGamepad) return gamepad as DualSenseGamepadHID;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Finds the DualSense last used/connected by the player or <c>null</c> if 
+        /// there is no one connected to the system.
+        /// </summary>
+        /// <returns>A DualSenseGamepadHID instance or <c>null</c>.</returns>
+        public static DualSenseGamepadHID FindCurrent() => Gamepad.current as DualSenseGamepadHID;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void Initialize()
@@ -98,6 +121,7 @@ namespace UniSense
             ExecuteCommand(ref command);
         }
 
+        //não funfa
         public override void SetLightBarColor(Color color)
         {
             var command = DualSenseHIDOutputReport.Create();
@@ -126,7 +150,7 @@ namespace UniSense
                 var lightBarColor = state.LightBarColor.Value;
                 command.SetLightBarColor(lightBarColor);
             }
-            
+
             if (state.Motor.HasValue)
             {
                 var motor = state.Motor.Value;
@@ -166,7 +190,7 @@ namespace UniSense
                 var playerLed = state.PlayerLed.Value;
                 command.SetPlayerLedState(playerLed);
             }
-                
+
             ExecuteCommand(ref command);
         }
 
