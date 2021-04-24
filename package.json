@@ -24,5 +24,12 @@
   "author": {
     "name": "nullkal",
     "email": "nullkal@nil.nu"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "DualSense Main Sample",
+      "description": "Shows how to use the DualSense main features.",
+      "path": "Samples~/MainSample"
+    }
+  ]
 }
